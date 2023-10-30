@@ -8,5 +8,4 @@ services:
     ports:
       - 3000:3000
     working_dir: /project
-    entrypoint: ["tail", "-f", "/dev/null"]
-    command: ["npm", "run", "start"]
+    entrypoint: ["npm", "run", "start"]

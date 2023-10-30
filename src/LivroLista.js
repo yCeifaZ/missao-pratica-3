@@ -12,14 +12,15 @@ function LinhaLivro(props) {
   ));
 
   return (
-    <tr>
-      <td class="col-sm-2">
+    <tr class="">
+      <td class="col-2">
         {props.livro.titulo}
+        <br></br>
         <button className="btn btn-danger" onClick={props.excluir}>Excluir</button>
       </td>
-      <td class="col-sm-5">{props.livro.resumo}</td>
-      <td class="col-sm-2">{nomeEditora}</td>
-      <td class="col-sm-3">
+      <td class="col-6">{props.livro.resumo}</td>
+      <td class="col-2">{nomeEditora}</td>
+      <td class="col-2">
         <ul>{autoresHtml}</ul>
       </td>
     </tr>
@@ -46,11 +47,13 @@ function LivroLista() {
     <main>
       <h1>Catálogo de Livros</h1>
       <table class="table table-striped">
-        <thead bgcolor="#1111">
-          <th scope="col-sm-2">Título</th>
-          <th scope="col-sm-5">Resumo</th>
-          <th scope="col-sm-2">Editora</th>
-          <th scope="col-sm-3">Autores</th>
+        <thead className="table-dark">
+          <tr>
+            <th>Título</th>
+            <th>Resumo</th>
+            <th>Editora</th>
+            <th>Autores</th>
+          </tr>
         </thead>
         <tbody>
           {livros.map((livro, index) => (

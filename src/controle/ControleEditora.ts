@@ -1,25 +1,26 @@
 import Editora from "../modelo/Editora";
 
-let editoras:Array<Editora> = [
+let editoras: Array<Editora> = [
     {
         codEditora: 1,
-        nome: "Martin Claret",
+        nome: "Alta Books",
     },
     {
         codEditora: 2,
-        nome: "Intrínseca",
+        nome: "Pearson",
     },
     {
         codEditora: 3,
-        nome: "Atlas",
+        nome: "Addison Wesley",
     },
 ]
 
 class ControleEditora {
 
-    getNomeEditora(codEditora:number): string {
-        const editorasResult = editoras.filter((editora: Editora) => editora.codEditora = codEditora);
-        return editorasResult[0].nome
+    getNomeEditora(codEditora: number): string {
+        const editoraResult = editoras.find((editora: Editora) => editora.codEditora === codEditora);
+        return editoraResult?.nome ?? ""
+
     }
 
     getEditoras(): Array<Editora> {
